@@ -13,9 +13,6 @@
         <module name="DATN_SD52_FA25_HuyNQ203" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="DATN_SD52_FA25_HuyNQ203" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
