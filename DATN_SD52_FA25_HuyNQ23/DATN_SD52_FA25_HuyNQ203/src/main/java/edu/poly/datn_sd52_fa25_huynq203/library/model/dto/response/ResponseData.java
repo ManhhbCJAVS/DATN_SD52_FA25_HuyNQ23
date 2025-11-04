@@ -1,11 +1,16 @@
 package edu.poly.datn_sd52_fa25_huynq203.library.model.dto.response;
 
-import lombok.experimental.FieldDefaults;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@FieldDefaults(level = lombok.AccessLevel.PRIVATE)
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ResponseData<T> {
-    int status;
-    String message;
-    T data;
-
+    private boolean success;
+    private String message;
+    private T data;
 }
