@@ -41,7 +41,6 @@ public abstract class CommonAttribute {
     @CreationTimestamp //YYYY-MM-DDTHH:MM:SS
     LocalDateTime createdAt;
 
-    @Column(name = "is_deleted")
-    @ColumnDefault("false")
-    boolean isDeleted;
+    @Column(name = "is_deleted", nullable = false, columnDefinition = "bit default 0")
+    boolean isDeleted = false;
 }

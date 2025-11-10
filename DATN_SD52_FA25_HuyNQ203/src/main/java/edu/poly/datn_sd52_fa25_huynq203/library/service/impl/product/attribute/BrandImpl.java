@@ -1,4 +1,4 @@
-package edu.poly.datn_sd52_fa25_huynq203.library.services.impl.product.attribute;
+package edu.poly.datn_sd52_fa25_huynq203.library.service.impl.product.attribute;
 
 import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.product.attribute.BrandRequest;
 import lombok.RequiredArgsConstructor;
