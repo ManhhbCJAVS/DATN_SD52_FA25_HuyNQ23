@@ -12,7 +12,7 @@ import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.*;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
@@ -26,12 +26,11 @@ public class AddressServiceImpl implements AddressService {
     private final DistrictRepository districtRepository;
     private final WardRepository wardRepository;
 
-    // ================= CREATE =================
+    // CREATE
     @Override
     @Transactional
     public AddressResponse createAddress(AddressRequest request) {
         Address address = Address.builder()
-                .id(String.valueOf(System.currentTimeMillis())) // 🔹 id là số từ timestamp
                 .customer(request.getCustomerId() != null
                         ? customerRepository.findById(request.getCustomerId())
                         .orElseThrow(() -> new ResourceNotFoundException("Không tìm thấy khách hàng"))
@@ -53,36 +52,31 @@ public class AddressServiceImpl implements AddressService {
         return mapToResponse(saved);
     }
 
-    // ================= UPDATE =================
+    // UPDATE
     @Override
     @Transactional
-    public AddressResponse updateAddress(String id, AddressRequest request) {
+    public AddressResponse updateAddress(Long id, AddressRequest request) {
         Address address = addressRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Không tìm thấy địa chỉ có ID: " + id));
 
-        if (request.getProvinceId() != null) {
+        if (request.getProvinceId() != null)
             address.setProvince(provinceRepository.findById(request.getProvinceId())
                     .orElseThrow(() -> new ResourceNotFoundException("Không tìm thấy tỉnh/thành phố")));
-        }
 
-        if (request.getDistrictId() != null) {
+        if (request.getDistrictId() != null)
             address.setDistrict(districtRepository.findById(request.getDistrictId())
                     .orElseThrow(() -> new ResourceNotFoundException("Không tìm thấy quận/huyện")));
-        }
 
-        if (request.getWardId() != null) {
+        if (request.getWardId() != null)
             address.setWard(wardRepository.findById(request.getWardId())
                     .orElseThrow(() -> new ResourceNotFoundException("Không tìm thấy phường/xã")));
-        }
 
         address.setCustomer(request.getCustomerId() != null
-                ? customerRepository.findById(request.getCustomerId())
-                .orElse(null)
+                ? customerRepository.findById(request.getCustomerId()).orElse(null)
                 : null);
 
         address.setEmployee(request.getEmployeeId() != null
-                ? employeeRepository.findById(request.getEmployeeId())
-                .orElse(null)
+                ? employeeRepository.findById(request.getEmployeeId()).orElse(null)
                 : null);
 
         address.setDefault(request.isDefault());
@@ -91,7 +85,7 @@ public class AddressServiceImpl implements AddressService {
         return mapToResponse(updated);
     }
 
-    // ================= READ =================
+    // READ
     @Override
     public List<AddressResponse> getAddressesByCustomer(Long customerId) {
         return addressRepository.findByCustomer_Id(customerId).stream()
@@ -114,26 +108,26 @@ public class AddressServiceImpl implements AddressService {
     }
 
     @Override
-    public AddressResponse getAddressById(String id) {
+    public AddressResponse getAddressById(Long id) {
         return addressRepository.findById(id)
                 .map(this::mapToResponse)
                 .orElseThrow(() -> new ResourceNotFoundException("Không tìm thấy địa chỉ có ID: " + id));
     }
 
-    // ================= DELETE =================
+    // DELETE
     @Override
     @Transactional
-    public void deleteAddress(String id) {
+    public void deleteAddress(Long id) {
         if (!addressRepository.existsById(id)) {
             throw new ResourceNotFoundException("Không tìm thấy địa chỉ với ID: " + id);
         }
         addressRepository.deleteById(id);
     }
 
-    // ================= SEARCH =================
+    // SEARCH
     @Override
     public Page<AddressResponse> searchAddresses(String keyword, Pageable pageable) {
-        Page<Address> page = addressRepository.findAll(pageable); // bạn có thể thêm search theo tên
+        Page<Address> page = addressRepository.findAll(pageable);
         List<AddressResponse> responses = page.getContent()
                 .stream()
                 .map(this::mapToResponse)
@@ -141,7 +135,7 @@ public class AddressServiceImpl implements AddressService {
         return new PageImpl<>(responses, pageable, page.getTotalElements());
     }
 
-    // ================= MAP =================
+    // MAP
     private AddressResponse mapToResponse(Address a) {
         return AddressResponse.builder()
                 .id(a.getId())

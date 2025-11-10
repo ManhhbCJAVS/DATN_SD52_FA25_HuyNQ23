@@ -59,7 +59,7 @@ public class AddressController {
 
     // ✅ Lấy địa chỉ theo ID
     @GetMapping("/{id}")
-    public ResponseEntity<AddressResponse> getAddressById(@PathVariable String id) {
+    public ResponseEntity<AddressResponse> getAddressById(@PathVariable Long id) {
         AddressResponse address = addressService.getAddressById(id);
         return ResponseEntity.ok(address);
     }
@@ -88,7 +88,7 @@ public class AddressController {
     // ✅ Cập nhật địa chỉ
     @PutMapping("/{id}")
     public ResponseEntity<AddressResponse> updateAddress(
-            @PathVariable String id,
+            @PathVariable Long id,
             @Valid @RequestBody AddressRequest request
     ) {
         AddressResponse address = addressService.updateAddress(id, request);
@@ -97,7 +97,7 @@ public class AddressController {
 
     // ✅ Xóa địa chỉ
     @DeleteMapping("/{id}")
-    public ResponseEntity<Map<String, String>> deleteAddress(@PathVariable String id) {
+    public ResponseEntity<Map<String, String>> deleteAddress(@PathVariable Long id) {
         addressService.deleteAddress(id);
         Map<String, String> response = new HashMap<>();
         response.put("message", "Xóa địa chỉ thành công");
