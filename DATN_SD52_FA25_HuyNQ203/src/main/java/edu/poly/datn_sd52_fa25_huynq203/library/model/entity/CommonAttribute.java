@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
-import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
@@ -30,9 +29,9 @@ public abstract class CommonAttribute {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     Long id;
-
+    //TODO: generate unique code
     @Column(name = "code")
-    String code;
+    String code = "BR-" + java.util.UUID.randomUUID().toString();
 
     @Column(name = "name")
     String name;
@@ -42,6 +41,26 @@ public abstract class CommonAttribute {
     LocalDateTime createdAt;
 
     @Column(name = "is_deleted")
-    @ColumnDefault("false")
-    boolean isDeleted;
+    Boolean isDeleted = Boolean.FALSE;
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName()).append(" [");
+        if (id != null) {
+            sb.append("id=").append(id).append(", ");
+        }
+        if (code != null) {
+            sb.append("code=").append(code).append(", ");
+        }
+        if (name != null) {
+            sb.append("name=").append(name).append(", ");
+        }
+        if (createdAt != null) {
+            sb.append("createdAt=").append(createdAt).append(", ");
+        }
+        sb.append("isDeleted=").append(isDeleted);
+        sb.append("]");
+        return sb.toString();
+    }
 }
