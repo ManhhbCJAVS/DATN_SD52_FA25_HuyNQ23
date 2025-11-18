@@ -5,6 +5,7 @@ import edu.poly.datn_sd52_fa25_huynq203.library.model.entity.user.Employee;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -32,7 +33,7 @@ public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    String id;
+    Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
@@ -43,15 +44,21 @@ public class Address {
     Employee employee;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "province_id", referencedColumnName = "id")
+    @JoinColumn(name = "province_id", referencedColumnName = "id",
+            foreignKey = @ForeignKey(name = "FK_address_province"))
     Province province;
 
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "district_id", referencedColumnName = "id")
+    @JoinColumn(name = "district_id", referencedColumnName = "id",
+            foreignKey = @ForeignKey(name = "FK_address_district")
+    )
     District district;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ward_id", referencedColumnName = "id")
+    @JoinColumn(name = "ward_id", referencedColumnName = "id",
+            foreignKey = @ForeignKey(name = "FK_address_ward")
+    )
     Ward ward;
 
     @Column(name = "is_default")

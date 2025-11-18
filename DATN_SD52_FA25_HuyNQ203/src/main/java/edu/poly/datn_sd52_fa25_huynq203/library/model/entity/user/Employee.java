@@ -2,6 +2,7 @@ package edu.poly.datn_sd52_fa25_huynq203.library.model.entity.user;
 
 import edu.poly.datn_sd52_fa25_huynq203.library.model.enums.EmployeeStatus;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.enums.Gender;
+import edu.poly.datn_sd52_fa25_huynq203.library.model.enums.Role;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -19,7 +20,6 @@ import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.ColumnDefault;
 
-import java.security.Permission;
 import java.time.LocalDate;
 
 @Entity
@@ -47,21 +47,24 @@ public class Employee {
     String email;
     @Column(name = "password")
     String password;
-    @Column(name = "permission")
-    Permission permission;
+    @Column(name = "role")
+    @Enumerated(EnumType.STRING)
+    @ColumnDefault("'EMPLOYEE'")
+    Role role;
     //
     @Column(name = "avatar")
     String avatar;
     @Column(name = "birthday")
     LocalDate birthday;
     @Column(name = "gender")
+    @Enumerated(EnumType.STRING)
     Gender gender;
     @Column(name = "note")
     String note;
 
     @Column(name = "status", nullable = false)
     @Enumerated(EnumType.STRING)
-    @ColumnDefault("ACTIVE")
+    @ColumnDefault("'ACTIVE'")
     EmployeeStatus status;
 
     @Column(name="created_at")
