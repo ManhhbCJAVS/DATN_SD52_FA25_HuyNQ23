@@ -47,9 +47,9 @@ public class Employee {
     String email;
     @Column(name = "password")
     String password;
-    @Column(name = "role")
+    @Column(name = "permission")
     @Enumerated(EnumType.STRING)
-    @ColumnDefault("'EMPLOYEE'")
+    @ColumnDefault("'STAFF'")
     Role role;
     //
     @Column(name = "avatar")

@@ -23,6 +23,7 @@ import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.CreationTimestamp;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
@@ -76,5 +77,11 @@ public class ProductVariant {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_color")
     Color color;
+    private BigDecimal finalPrice;
+
+    public void setFinalPrice(BigDecimal finalPrice) {
+        this.finalPrice = finalPrice;
+    }
+
 
 }
