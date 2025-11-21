@@ -8,23 +8,23 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class CloudinaryConfig {
-    @Value("${cloudinary.cloud-name}")
+
+    @Value("${cloudinary.cloud_name}")
     private String cloudName;
 
-    @Value("${cloudinary.api-key}")
+    @Value("${cloudinary.api_key}")
     private String apiKey;
 
-    @Value("${cloudinary.api-secret}")
+    @Value("${cloudinary.api_secret}")
     private String apiSecret;
 
     @Bean
     public Cloudinary cloudinary() {
-        // Cloudinary khuyến cáo sử dụng ObjectUtils.asMap() để tạo Map cấu hình
         return new Cloudinary(ObjectUtils.asMap(
                 "cloud_name", cloudName,
                 "api_key", apiKey,
                 "api_secret", apiSecret,
-                "secure", true // 📌 Cải thiện: Luôn sử dụng HTTPS/CDN an toàn
+                "secure", true  // luôn dùng HTTPS
         ));
     }
 }
