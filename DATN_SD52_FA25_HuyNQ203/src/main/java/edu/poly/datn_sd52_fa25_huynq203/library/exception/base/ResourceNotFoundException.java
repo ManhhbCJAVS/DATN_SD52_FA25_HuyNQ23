@@ -1,4 +1,4 @@
-package edu.poly.datn_sd52_fa25_huynq203.library.exception;
+package edu.poly.datn_sd52_fa25_huynq203.library.exception.base;
 
 public class ResourceNotFoundException extends RuntimeException {
     public ResourceNotFoundException(String message) {

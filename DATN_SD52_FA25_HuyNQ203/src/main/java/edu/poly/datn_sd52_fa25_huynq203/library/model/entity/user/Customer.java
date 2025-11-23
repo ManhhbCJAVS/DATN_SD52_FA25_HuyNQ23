@@ -58,11 +58,12 @@ public class Customer {
     @Column(name = "birthday")
     LocalDate birthday;
     @Column(name = "gender")
+    @Enumerated(EnumType.STRING)
     Gender gender;
     //
     @Column(name = "status", nullable = false)
     @Enumerated(EnumType.STRING)
-    @ColumnDefault("ACTIVE")
+    @ColumnDefault("'ACTIVE'")
     CustomerStatus status;
 
     @Column(name="created_at")

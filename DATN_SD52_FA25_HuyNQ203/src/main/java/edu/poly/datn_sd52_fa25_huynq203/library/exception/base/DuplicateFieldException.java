@@ -1,4 +1,4 @@
-package edu.poly.datn_sd52_fa25_huynq203.library.exception;
+package edu.poly.datn_sd52_fa25_huynq203.library.exception.base;
 
 public class DuplicateFieldException extends RuntimeException{
     private final String fieldName;

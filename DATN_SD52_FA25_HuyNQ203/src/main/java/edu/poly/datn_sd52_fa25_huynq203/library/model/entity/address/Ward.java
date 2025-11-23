@@ -1,12 +1,7 @@
 package edu.poly.datn_sd52_fa25_huynq203.library.model.entity.address;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -32,4 +27,9 @@ public class Ward {
 
     @Column(name = "name")
     String name;
+
+    @ManyToOne
+    @JoinColumn(name = "district_id")
+    District district;
+
 }
