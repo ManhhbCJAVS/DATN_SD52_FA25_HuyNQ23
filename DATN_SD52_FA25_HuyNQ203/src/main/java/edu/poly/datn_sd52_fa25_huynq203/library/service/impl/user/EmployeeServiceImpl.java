@@ -2,7 +2,7 @@ package edu.poly.datn_sd52_fa25_huynq203.library.service.impl.user;
 
 import edu.poly.datn_sd52_fa25_huynq203.library.exception.base.DuplicateFieldException;
 import edu.poly.datn_sd52_fa25_huynq203.library.exception.base.ResourceNotFoundException;
-import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.product.EmployeeRequest;
+import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.product.attribute.EmployeeRequest;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.response.user.EmployeeResponse;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.entity.user.Employee;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.enums.EmployeeStatus;

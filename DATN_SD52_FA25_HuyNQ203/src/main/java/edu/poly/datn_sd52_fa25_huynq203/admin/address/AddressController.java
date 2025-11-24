@@ -1,4 +1,4 @@
-package edu.poly.datn_sd52_fa25_huynq203.library.controller;
+package edu.poly.datn_sd52_fa25_huynq203.admin.address;
 
 import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.product.attribute.AddressRequest;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.response.address.AddressResponse;
@@ -104,4 +104,5 @@ public class AddressController {
         return ResponseEntity.ok(response);
     }
 }
+
 

@@ -1,6 +1,6 @@
 package edu.poly.datn_sd52_fa25_huynq203.library.service.user;
 
-import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.product.EmployeeRequest;
+import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.product.attribute.EmployeeRequest;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.response.user.EmployeeResponse;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.enums.EmployeeStatus;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.enums.Role;

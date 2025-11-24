@@ -1,4 +1,4 @@
-package edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.product;
+package edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.product.attribute;
 
 import edu.poly.datn_sd52_fa25_huynq203.library.model.enums.EmployeeStatus;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.enums.Gender;
