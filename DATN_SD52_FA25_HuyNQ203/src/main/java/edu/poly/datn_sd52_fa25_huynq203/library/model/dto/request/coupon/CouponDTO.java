@@ -1,4 +1,4 @@
-package edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.coupon.attribute;
+package edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.coupon;
 
 import edu.poly.datn_sd52_fa25_huynq203.library.model.enums.CouponStatus;
 import jakarta.validation.constraints.*;
