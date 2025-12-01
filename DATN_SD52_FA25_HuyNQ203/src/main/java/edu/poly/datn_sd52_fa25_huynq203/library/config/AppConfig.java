@@ -26,5 +26,4 @@ public class AppConfig {
         bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
         return bean;
     }
-
 }

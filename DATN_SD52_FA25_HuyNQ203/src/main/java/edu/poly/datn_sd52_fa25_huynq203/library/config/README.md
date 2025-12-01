@@ -36,5 +36,3 @@ Configuration includes:
 7) ModelMapperConfig
     - Cấu hình ModelMapper để ánh xạ giữa các đối tượng Java (DTOs và Entities)
     - Thiết lập các quy tắc ánh xạ tùy chỉnh nếu cần thiết
-    - 
-8) 
