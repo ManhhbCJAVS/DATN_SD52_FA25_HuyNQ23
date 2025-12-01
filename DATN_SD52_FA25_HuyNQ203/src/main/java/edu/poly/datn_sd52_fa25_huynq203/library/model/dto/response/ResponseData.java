@@ -5,10 +5,13 @@ import lombok.experimental.FieldDefaults;
 
 @FieldDefaults(level = lombok.AccessLevel.PRIVATE)
 @Getter
-public class ResponseData<T> {
-    int status;
-    String message;
-    T data;
+@Builder
+
+public class ResponseData<T> implements Serializable {
+      int status; // log 200
+      String message; //
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+     T data;
 
     //PUT PATCH DELETE
     public ResponseData(int status, String message) {
