@@ -1,8 +1,7 @@
 package edu.poly.datn_sd52_fa25_huynq203.library.model.mapper;
 
-import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.coupon.attribute.CouponDTO;
+import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.coupon.CouponDTO;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.entity.coupon.Coupon;
-import edu.poly.datn_sd52_fa25_huynq203.library.model.enums.CouponStatus;
 import org.springframework.stereotype.Component;
 
 @Component
