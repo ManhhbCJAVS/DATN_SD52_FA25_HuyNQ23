@@ -12,7 +12,7 @@ public class BusinessException extends RuntimeException {
     final ExceptionType exType;
 
     public BusinessException(ExceptionType exType) {
-        super(exType.getDefaultMessage());
+        super(exType.getDefaultMessage()); // BusinessException handled: Product not found with ID: 9007199254740991
         this.exType = exType;
     }
 

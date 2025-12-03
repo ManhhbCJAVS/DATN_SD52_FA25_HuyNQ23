@@ -6,7 +6,7 @@ import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.response.ResponseData;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.response.CommonAttributeResponse;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.entity.CommonAttribute;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.mapper.product.attribute.BaseAttributeMapper;
-import edu.poly.datn_sd52_fa25_huynq203.library.service.impl.product.attribute.AbstractBaseAttributeService;
+import edu.poly.datn_sd52_fa25_huynq203.library.service.product.attribute.AbstractBaseAttributeService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import jakarta.validation.Valid;

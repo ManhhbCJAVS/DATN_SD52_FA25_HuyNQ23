@@ -5,8 +5,8 @@ import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.variant.color.
 import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.response.variant.ColorResponse;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.entity.variant.attribute.Color;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.mapper.variant.attribute.ColorMapper;
-import edu.poly.datn_sd52_fa25_huynq203.library.service.impl.product.attribute.AbstractBaseAttributeService;
-import edu.poly.datn_sd52_fa25_huynq203.library.service.impl.variant.attribute.ColorService;
+import edu.poly.datn_sd52_fa25_huynq203.library.service.product.attribute.AbstractBaseAttributeService;
+import edu.poly.datn_sd52_fa25_huynq203.library.service.variant.attribute.ColorService;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/admin/colors")
+@RequestMapping("${backoffice.endpoint}/colors")
 
 @FieldDefaults(level = lombok.AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor

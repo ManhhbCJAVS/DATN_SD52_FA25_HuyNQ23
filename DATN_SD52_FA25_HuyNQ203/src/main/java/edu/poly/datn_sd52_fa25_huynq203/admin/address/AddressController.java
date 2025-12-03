@@ -1,6 +1,6 @@
 package edu.poly.datn_sd52_fa25_huynq203.admin.address;
 
-import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.product.attribute.AddressRequest;
+import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.user.AddressRequest;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.response.address.AddressResponse;
 import edu.poly.datn_sd52_fa25_huynq203.library.service.address.AddressService;
 import jakarta.validation.Valid;
@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/admin/addresses")
+@RequestMapping("${backoffice.endpoint}/addresses")
 @RequiredArgsConstructor
 @CrossOrigin("*")
 public class AddressController {

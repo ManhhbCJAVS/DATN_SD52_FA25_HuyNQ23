@@ -1,6 +1,6 @@
 package edu.poly.datn_sd52_fa25_huynq203.admin.user;
 
-import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.product.attribute.CustomerRequest;
+import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.user.CustomerRequest;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.response.user.CustomerResponse;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.enums.CustomerStatus;
 import edu.poly.datn_sd52_fa25_huynq203.library.service.user.CustomerService;
@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/admin/customers")
+@RequestMapping("${backoffice.endpoint}/customers")
 @RequiredArgsConstructor
 @CrossOrigin("*")
 public class CustomerController {

@@ -1,6 +1,6 @@
 package edu.poly.datn_sd52_fa25_huynq203.admin.user;
 
-import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.product.attribute.EmployeeRequest;
+import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.user.EmployeeRequest;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.response.user.EmployeeResponse;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.enums.EmployeeStatus;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.enums.Role;
@@ -13,14 +13,24 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/admin/employees")
+@RequestMapping("${backoffice.endpoint}/employees")
 @RequiredArgsConstructor
 @CrossOrigin("*")
 public class EmployeeController {

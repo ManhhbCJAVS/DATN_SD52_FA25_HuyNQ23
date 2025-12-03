@@ -4,7 +4,7 @@ package edu.poly.datn_sd52_fa25_huynq203.admin.product;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.variant.UploadFileDTO;
-import edu.poly.datn_sd52_fa25_huynq203.library.service.impl.variant.VariantImageService;
+import edu.poly.datn_sd52_fa25_huynq203.library.service.variant.VariantImageService;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/admin/image")
+@RequestMapping("${backoffice.endpoint}/image")
 
 @FieldDefaults(level = lombok.AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor

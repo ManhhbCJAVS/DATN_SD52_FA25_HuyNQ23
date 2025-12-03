@@ -12,5 +12,5 @@ import lombok.experimental.FieldDefaults;
 public class SignInResponse {
     String accessToken;
     String refreshToken;
-    UserLoginResponse userLoginResponse;
+    Long userId;
 }

@@ -3,7 +3,7 @@ package edu.poly.datn_sd52_fa25_huynq203.admin.product;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.product.CreateProductRequest;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.product.UpdateProductRequest;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.response.ResponseData;
-import edu.poly.datn_sd52_fa25_huynq203.library.service.impl.product.ProductService;
+import edu.poly.datn_sd52_fa25_huynq203.library.service.product.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import jakarta.validation.Valid;
@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/admin/products")
+@RequestMapping("${backoffice.endpoint}/products")
 
 @FieldDefaults(level = lombok.AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor

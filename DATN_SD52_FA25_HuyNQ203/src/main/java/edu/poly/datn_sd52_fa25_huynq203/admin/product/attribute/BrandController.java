@@ -5,8 +5,8 @@ import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.request.product.attrib
 import edu.poly.datn_sd52_fa25_huynq203.library.model.dto.response.CommonAttributeResponse;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.entity.product.attribute.Brand;
 import edu.poly.datn_sd52_fa25_huynq203.library.model.mapper.product.attribute.BrandMapper;
-import edu.poly.datn_sd52_fa25_huynq203.library.service.impl.product.attribute.BrandService;
-import edu.poly.datn_sd52_fa25_huynq203.library.service.impl.product.attribute.AbstractBaseAttributeService;
+import edu.poly.datn_sd52_fa25_huynq203.library.service.product.attribute.BrandService;
+import edu.poly.datn_sd52_fa25_huynq203.library.service.product.attribute.AbstractBaseAttributeService;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/admin/brands")
+@RequestMapping("${backoffice.endpoint}/brands")
 
 @FieldDefaults(level = lombok.AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor

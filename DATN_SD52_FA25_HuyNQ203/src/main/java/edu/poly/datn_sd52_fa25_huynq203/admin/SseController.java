@@ -1,6 +1,6 @@
 package edu.poly.datn_sd52_fa25_huynq203.admin;
 
-import edu.poly.datn_sd52_fa25_huynq203.library.service.impl.SseService;
+import edu.poly.datn_sd52_fa25_huynq203.library.service.SseService;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
